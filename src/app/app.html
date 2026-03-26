@@ -1,14 +1,13 @@
-<link rel="stylesheet" href="app.css">
-
 <div class="container">
   <h1>Os produtos mais vendidos!</h1>
+
   <div class="vitrine">
-    @for (item of produtos; track item.produto) {
+    @for (item of perifericos; track item.nome) {
     <div class="card">
-      <h3 class="produto">{{ item.produto }}</h3>
+      <h3 class="produto">{{ item.nome }}</h3>
       <p class="descricao">{{ item.descricao }}</p>
       <p class="preco">R$ {{ item.preco.toFixed(2) }}</p>
-      <button (click)="comprar(item.produto)">Comprar</button>
+      <button (click)="comprar(item.nome)">Comprar</button>
     </div>
     }
   </div>

@@ -1,26 +1,24 @@
-const lista = document.querySelector(".lista-card");
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterOutlet } from "@angular/router";
 
-const vitrine = [
-    {
-        produto: "Teclado mecanico",
-        descricao: "Teclado mecanico com switch blue",
-        preco: "R$ 300,00",
-    },
-    {
-        produto: "Mouse gamer",
-        descricao: "Mouse gamer com 6 botões e iluminação RGB",
-        preco: "R$ 150,00",
-    },
-    {
-        produto: "Monitor 24 polegadas",
-        descricao: "Monitor Full HD com taxa de atualização de 144Hz",
-        preco: "R$ 800,00",
-    },
-    {
-        produto: "Headset gamer",
-        descricao: "Headset com som surround e microfone retrátil",
-        preco: "R$ 200,00",
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet],
+  templateUrl: './app.html', 
+  styleUrls: ['./app.css']
+})
+export class App {
+
+    perifericos = [
+        { nome: "Teclado Mecânico", descricao: "RGB com switches azuis", preco: 250.00 },
+        { nome: "Mouse Gamer", descricao: "1600 DPI e 6 botões", preco: 120.50 },
+        { nome: "Monitor 144hz", descricao: "24 polegadas Full HD", preco: 1100.00 },
+        { nome: "Headset 7.1", descricao: "Som surround e microfone", preco: 350.00 }
+    ];
+
+    comprar(nomeProduto: string) {
+        alert("Comprou: " + nomeProduto);
     }
-]
-
-c
+}
