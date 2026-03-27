@@ -6,7 +6,7 @@
     <div class="card">
       <h3 class="produto">{{ item.nome }}</h3>
       <p class="descricao">{{ item.descricao }}</p>
-      <p class="preco">R$ {{ item.preco.toFixed(2) }}</p>
+      <p class="preco">{{ item.preco | currency:'BRL'}}</p>
       <button (click)="comprar(item.nome)">Comprar</button>
     </div>
     }
